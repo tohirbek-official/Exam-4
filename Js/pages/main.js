@@ -11,18 +11,18 @@ function request(url, options) {
   return fetch(INPOINT + url, options);
 }
 
-function main(title, mainWord, date, discription) {
+function main(title, mainWord, date, discription, userLink) {
   return `
   <div class="main-image">
     <img src="./Image/main.png  "/></div>
       <div class="container">
     <div class="main-word"><div class="main-title">
       <span>${title}</span>  <h1>${mainWord}</h1></div>
-    <div class="main-word-date">  <span>By</span><span style="color: #ffd050"> James West </span>
+    <div class="main-word-date">  <span>By</span><span ><a href="${userLink}" style="color: #ffd050"> James West</a> </span>
       <span>&nbsp;|&nbsp; ${date}</span></div>
    <div class="main-discription"><p>
     ${discription}</p></div><div class="main-button">
-    <button onclick=readMore() >Read More ></button>
+    <button onclick=readMore() ><a style="color:rgba(35, 37, 54, 1);" href=${userLink}>Read More</a> ></button>
   </div> </div></div>`;
 }
 
@@ -40,19 +40,14 @@ function mainDate() {
           data.title,
           data.mainWord,
           data.date,
-          data.discription
+          data.discription,
+          data.userLink,
+          data.userLink
         );
       });
     });
 }
 mainDate();
-
-function readMore() {
-  this.addEventListener("click", () => {
-    location.href = "category.html";
-  });
-}
-
 function popularBlogs() {
   return `
   <div class="card">
