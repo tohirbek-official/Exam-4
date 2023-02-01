@@ -2,6 +2,7 @@ footer {
   padding-bottom: 54px;
   margin-top: 104px;
   background: #232536;
+
   .footer {
     display: flex;
     align-items: center;
@@ -35,9 +36,9 @@ footer {
     display: flex;
     align-items: center;
   }
-  li:hover{
-  transform: scale(1.075);
-}
+  li:hover {
+    transform: scale(1.075);
+  }
 }
 @media screen and (max-width: 670px) {
   .footer-left {

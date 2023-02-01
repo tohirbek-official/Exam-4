@@ -4,7 +4,7 @@ nav {
   padding: 15px 0;
   transition: 0.4s;
   position: sticky;
-  background: var(--navcolor);
+  background: #232536;
 }
 .nav {
   display: flex;
@@ -39,11 +39,11 @@ nav {
   filter: blur(25px);
   background: rgba(255, 255, 255, 0.596);
 }
-.login-button {
+.login-button-navbar {
   margin-left: 52px;
   position: relative;
 }
-.login-button:hover::after {
+.login-button-navbar:hover::after {
   top: 0%;
   left: 0;
   width: 100%;
@@ -54,7 +54,7 @@ nav {
   position: absolute;
   background: rgba(255, 255, 255, 0.226);
 }
-.login-button button {
+.login-button-navbar button {
   font-size: 16px;
   font-weight: 700;
   color: #232536;
@@ -91,7 +91,7 @@ nav {
   .container {
     padding: 0 15px !important;
   }
-  .login-button {
+  .login-button-navbar {
     margin-left: 0;
   }
   .responsive {
@@ -112,7 +112,7 @@ nav {
     transition: 0.4s linear;
     flex-direction: column;
     justify-content: center;
-    background: var(--navcolor);
+    background: #232536;
     ul {
       align-items: center;
       white-space: nowrap;
@@ -127,9 +127,12 @@ nav {
   .nav-logo img {
     width: 80%;
   }
-  .login-button button {
+  .login-button-navbar button {
     font-size: 14px;
     padding: 13px 30px;
+  }
+  .close-responsive img {
+    width: 16px;
   }
 }
 .glider.draggable {

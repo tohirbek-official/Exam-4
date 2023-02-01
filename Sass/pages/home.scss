@@ -1,8 +1,14 @@
+@import "../layout/nav";
+@import "../layout/footer";
+@import '../main.scss';
 $color-white: #ffffff;
 $color-light: #f4f4f4;
 $color-darks: #454545;
 $box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
+body{
+  color : $color-white
+}
 .main-section {
   margin: auto;
   height: 100%;
@@ -394,4 +400,8 @@ $box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     transform: scale(1.018);
     background-color: #ffd050;
   }
+}
+
+.span {
+  color: red;
 }

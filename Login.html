@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav">
+          <div class="nav-logo">
+            <a href="./index.html"><img src="./Image/Logo.png" /></a>
+          </div>
+          <div class="nav-link">
+            <div class="link-nav">
+              <ul>
+                <li><a href="./index.html"> Home </a></li>
+                <li><a href="./blog.html"> Blog </a></li>
+                <li><a href="./about.html"> About Us </a></li>
+                <li><a href="./register.html"> Register </a></li>
+              </ul>
+              <div class="login-button-navbar">
+                <a href="./Login.html"><button>Login</button></a>
+              </div>
+            </div>
+            <div class="responsive">
+              <div class="hamburger">
+                <img src="./Image/hamburger.png" id="id" />
+              </div>
+              <div class="close-responsive">
+                <img src="./Image/close.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- main  -->
+    <main>
+      <div class="container">
+        <div class="login">
+          <div class="login-title">
+            <span>Login</span>
+          </div>
+          <div class="login-input">
+            <form>
+              <div class="input-form">
+                <input
+                  type="text"
+                  placeholder="Username"
+                  required
+                  id="userName"
+                />
+                <input
+                  type="password"
+                  required
+                  placeholder="Password"
+                  id="password"
+                />
+              </div>
+              <div class="login-button">
+                <button type="submit">Login</button>
+              </div>
+              <div class="login-sing-up">
+                <span
+                  >Don't have an account yet?<a href="./Register.html">
+                    Sign up</a
+                  ></span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- main end -->
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div class="footer-left">
+            <p>Finstreet 118 2561 Fintown</p>
+            <p>Hello@finsweet.com 020 7993 2905</p>
+          </div>
+          <div class="footer-right">
+            <div class="social-link">
+              <ul>
+                <li>
+                  <a href="#"><img src="./Image/facebook.png" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="./Image/twitter.png" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="./Image/instagram.png" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="./Image/in.png" /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./Js/pages/login.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.6/axios.min.js"
+      integrity="sha512-RUkwGPgBmjCwqXpCRzpPPmGl0LSFp9v5wXtmG41+OS8vnmXybQX5qiG5adrIhtO03irWCXl+z0Jrst6qeaLDtQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./Js/layout/api.js"></script>
+    <script src="./Js/layout/navbar.js"></script>
+  </body>
+</html>

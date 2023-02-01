@@ -1,0 +1,33 @@
+@import "../main.scss";
+@import "../layout/nav";
+@import "../layout/footer";
+
+.my-post-title {
+  border-bottom: 1px solid silver;
+  margin-top: 40px;
+  display: flex;
+  padding-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-family: "Sen";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: -2px;
+    color: #232536;
+  }
+  button {
+    padding: 18px 45px;
+    background-color: #ffd050;
+  }
+}
+.posts-search {
+  margin-top: 70px;
+  input {
+    border: 1px solid silver;
+    width: 100%;
+    outline-color: #ffd050;
+    padding: 20px 0px 20px 20px;
+  }
+}

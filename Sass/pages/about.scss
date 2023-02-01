@@ -1,0 +1,207 @@
+@import "../main.scss";
+@import "../layout/nav";
+@import "../layout/footer";
+.about {
+  padding: 83px 108px 109px 86px;
+  background: #f4f0f8;
+  margin-top: 50px;
+}
+.about-mssion {
+  display: flex;
+  gap: 54px;
+  .mision-left-word,
+  .misson-right {
+    span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #232536;
+    }
+    h1 {
+      font-family: "Sen";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 40px;
+      letter-spacing: -1px;
+      margin-top: 24px;
+      color: #232536;
+    }
+    p {
+      margin-top: 16px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: #6d6e76;
+    }
+  }
+}
+
+@media screen and (max-width: 848px) {
+  .about {
+    padding: 100px 37px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .about-mssion,
+  .cratives-content {
+    flex-direction: column;
+  }
+  .cratives-content {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .about {
+    padding: 100px 20px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .mision-left-word,
+  .about-mssion .misson-right {
+    h1 {
+      font-size: 23px !important;
+    }
+  }
+}
+.creatives {
+  margin-top: 122px;
+  .cratives-content {
+    display: flex;
+    gap: 137px;
+    justify-content: center;
+    align-items: center;
+  }
+  .creatives-left {
+    flex: 40%;
+    span {
+      font-family: "Sen";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      letter-spacing: -2px;
+      color: #232536;
+    }
+    h1 {
+      margin-top: 16px;
+      font-family: "Sen";
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px;
+      font-size: 20px;
+      color: #232536;
+    }
+    p {
+      margin-top: 16px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: #232536;
+    }
+  }
+  .creatives-right {
+    flex: 50%;
+  }
+}
+@media screen and (max-width: 1090px) {
+  .creatives .cratives-content {
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 1039px) {
+  .creatives .creatives-left span {
+    font-size: 30px;
+  }
+  .creatives .creatives-left h1 {
+    font-size: 15px;
+  }
+  .creatives .creatives-left p {
+    font-size: 13px;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .creatives .cratives-content {
+    gap: 20px;
+  }
+}
+
+.started-blog {
+  margin-top: 128px;
+  .started-content {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    justify-content: space-between;
+    .started-left,
+    .started-right {
+      flex: 50%;
+    }
+  }
+  .started-right {
+    span,
+    h1 {
+      font-family: "Sen";
+      font-style: normal;
+      font-weight: 700;
+    }
+    span {
+      font-size: 36px;
+      letter-spacing: -2px;
+      color: #232536;
+    }
+    h1 {
+      margin-top: 16px;
+      font-size: 24px;
+      line-height: 32px;
+      color: #232536;
+    }
+    p {
+      margin-top: 16px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: #232536;
+    }
+  }
+}
+@media screen and (max-width: 1050px) {
+  .started-blog .started-right span {
+    font-size: 22px;
+  }
+  .started-blog .started-right h1 {
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .started-blog .started-right p {
+    font-size: 13px;
+  }
+  .started-blog .started-right p {
+    line-height: 22px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .started-blog .started-right h1 {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .started-blog .started-right p {
+    line-height: 24px;
+  }
+  .started-content {
+    gap: 20px !important;
+    text-align: center;
+    flex-direction: column;
+  }
+}

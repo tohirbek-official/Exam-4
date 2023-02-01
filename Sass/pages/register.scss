@@ -1,0 +1,83 @@
+@import "../layout/nav";
+@import "../layout/footer";
+@import "../main.scss";
+
+.register-title {
+  text-align: center;
+  margin-top: 68px;
+  span {
+    font-family: "Sen";
+    font-weight: 700;
+    font-size: 40px;
+    color: #232536;
+  }
+}
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.register-input,
+.register-button button {
+  width: 600px;
+  margin: auto;
+}
+.register-input {
+  position: relative;
+  margin-top: 101px;
+  input {
+    border: 1px solid silver;
+    outline-color: #ffd050;
+    border-radius: var(--border);
+    padding: 24px 0px 24px 24px;
+  }
+}
+.register-button {
+  margin-top: 45px;
+
+  button {
+    background-color: #ffd050;
+    color: #232536;
+    padding: 18px 0;
+    font-family: "Sen";
+    font-weight: 700;
+    font-size: 20px;
+    color: #232536;
+  }
+}
+.register-sing-up {
+  text-align: center;
+  margin-top: 75px;
+  span {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #232536;
+    a {
+      color: #232536;
+      font-weight: 800;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.register-status{
+  font-size: 13px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  font-family: "Sen";
+  color: red;
+  font-weight: 600;
+}
+@media screen and (max-width: 650px) {
+  .register-input,
+  .register-button button {
+    width: 100%;
+    margin: auto;
+  }
+  .register-input {
+    margin-top: 76px;
+  }
+}
