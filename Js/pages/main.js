@@ -31,7 +31,6 @@ request.get("post/lastone").then((res) => {
     date,
     res.data.description
   );
-  console.log(res.data);
   mainWord.innerHTML = result;
 });
 
@@ -86,4 +85,8 @@ request.get("post/lastones").then((res) => {
   });
 });
 
-function startup() {}
+// function startup() {
+//   request.get("category").then((res) => {
+//     console.log(res.data);
+//   });
+// }

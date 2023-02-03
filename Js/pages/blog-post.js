@@ -4,7 +4,7 @@ function post(photo, userName, date, title, description, tags) {
     <div class="container">
     <div class="blog">
       <div class="blog-image">
-      <img src="http://localhost:5000/upload/${photo} "/></div>
+      <img src="https://blog-backend.up.railway.app/upload/${photo}"/></div>
       </div>
       <div class="blog-info">
         <div class="user-info">
@@ -39,4 +39,4 @@ let resdate = userCreateDate.split("T")[0];
 let date = resdate.replaceAll("-", " ");
 
 const res = post(photo, fullName, date, blog.title, blog.description, tags);
-main.innerHTML = res
+main.innerHTML = res;

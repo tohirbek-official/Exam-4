@@ -9,7 +9,7 @@ function getPost(photo, title, description) {
   return `
     <div class="user-post-box">
     <div class="post-left">
-    <img src="https://blog-backend.up.railway.app/upload/${photo} "/>></div>
+    <img src="https://blog-backend.up.railway.app/upload/${photo} "/></div>
     <div class="post-right">
       <div class="post-info">
         <span>BUSINESS</span>

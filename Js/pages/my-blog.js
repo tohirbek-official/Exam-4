@@ -27,6 +27,6 @@ if (TOKEN) {
 //     </p></div></div></div>`;
 // }
 
-request.get("/post/login").then((res) => {
-  console.log(res.data);
-});
+// request.get("").then((res) => {
+//   console.log(res.data);
+// });
