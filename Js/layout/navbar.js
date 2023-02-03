@@ -26,8 +26,8 @@ let token = localStorage.getItem("PORTFOLIO_TOKEN");
 if (token) {
   navLogo.innerHTML = "My blog";
   navLogo.href = "./blog.html";
-  register.href = "./all-post.html";
-  register.textContent = "All category";
+  register.href = "./Category.html";
+  register.textContent = "Category";
   loginButton.textContent = "Logout";
 } else {
   register.href;

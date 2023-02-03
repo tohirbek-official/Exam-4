@@ -41,7 +41,7 @@ form.addEventListener("submit", (e) => {
         username: userName.value,
         password: password.value,
       })
-      .then((res) => {
+      .then(() => {
         location.href = "./Login.html";
       })
       .catch((res) => {
