@@ -42,7 +42,6 @@ form.addEventListener("submit", (e) => {
         password: password.value,
       })
       .then((res) => {
-        localStorage.setItem(TOKEN, res.data.token);
         location.href = "./Login.html";
       })
       .catch((res) => {
