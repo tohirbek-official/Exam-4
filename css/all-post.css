@@ -274,41 +274,34 @@ footer .footer-right {
     margin-right: 0px !important;
   }
 }
-.about {
-  padding: 83px 108px 109px 86px;
-  background: #f4f0f8;
-  margin-top: 50px;
-}
-
-.about-mssion {
+.featured {
+  padding-top: 80px;
+  padding-bottom: 80px;
   display: flex;
-  gap: 54px;
+  align-items: center;
+  gap: 80px;
 }
-.about-mssion .mision-left-word span,
-.about-mssion .misson-right span {
+.featured .featured-left,
+.featured .featured-right {
+  flex: 50%;
+}
+.featured .featured-info span {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   color: #232536;
 }
-.about-mssion .mision-left-word h1,
-.about-mssion .misson-right h1 {
+.featured .featured-info h1 {
+  margin-top: 15px;
   font-family: "Sen";
   font-style: normal;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 40px;
-  letter-spacing: -1px;
-  margin-top: 24px;
+  font-size: 36px;
   color: #232536;
 }
-.about-mssion .mision-left-word p,
-.about-mssion .misson-right p {
-  margin-top: 16px;
+.featured .featured-info p {
+  margin-top: 57px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -317,162 +310,144 @@ footer .footer-right {
   color: #6d6e76;
 }
 
-@media screen and (max-width: 848px) {
-  .about {
-    padding: 100px 37px;
+.my-post-title {
+  margin-top: 40px;
+  display: flex;
+  padding-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-post-title span {
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: -2px;
+  color: #232536;
+}
+
+@media screen and (max-width: 1100px) {
+  .featured .featured-info p {
+    margin-top: 16px;
+  }
+  .featured .featured-info {
+    font-size: 15px;
+  }
+  .featured .featured-info h1 {
+    font-size: 30px;
   }
 }
-@media screen and (max-width: 720px) {
-  .about-mssion,
-.cratives-content {
-    flex-direction: column;
+@media screen and (max-width: 1000px) {
+  .featured {
+    gap: 28px;
   }
-  .cratives-content {
-    text-align: center;
+}
+@media screen and (max-width: 774px) {
+  .featured {
+    flex-direction: column-reverse;
+  }
+  .featured-left {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 535px) {
+  .featured-left {
+    width: inherit;
+  }
+}
+.posts-search {
+  margin-top: 70px;
+}
+.posts-search input {
+  border: 1px solid silver;
+  width: 100%;
+  outline-color: #ffd050;
+  padding: 20px 0px 20px 20px;
+}
+
+.my-post-all {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 57px;
+  gap: 40px;
+}
+
+.user-post-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+.user-post-box .post-left {
+  flex: 45%;
+}
+.user-post-box .post-right {
+  flex: 55%;
+}
+
+.post-info span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #592ea9;
+}
+.post-info h1 {
+  margin-top: 20px;
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  color: #232536;
+}
+.post-info p {
+  margin-top: 35px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #6d6e76;
+}
+
+@media screen and (max-width: 939px) {
+  .post-info h1 {
+    font-size: 29px;
+    line-height: 39px;
+  }
+  .post-info p {
+    margin-top: 26px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .post-info p {
+    margin-top: 12px;
+  }
+  .post-info h1 {
+    font-size: 26px;
+    line-height: 33px;
+  }
+  .post-info p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .user-post-box {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 500px) {
-  .about {
-    padding: 100px 20px;
+  .my-post-title span {
+    font-size: 33px;
+  }
+  .my-post-title button {
+    padding: 10px 24px;
+    background-color: #ffd050;
   }
 }
-@media screen and (max-width: 430px) {
-  .mision-left-word h1,
-.about-mssion .misson-right h1 {
-    font-size: 23px !important;
-  }
-}
-.creatives {
-  margin-top: 122px;
-}
-.creatives .cratives-content {
-  display: flex;
-  gap: 137px;
-  justify-content: center;
-  align-items: center;
-}
-.creatives .creatives-left {
-  flex: 40%;
-}
-.creatives .creatives-left span {
-  font-family: "Sen";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  letter-spacing: -2px;
-  color: #232536;
-}
-.creatives .creatives-left h1 {
-  margin-top: 16px;
-  font-family: "Sen";
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  font-size: 20px;
-  color: #232536;
-}
-.creatives .creatives-left p {
-  margin-top: 16px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-  color: #232536;
-}
-.creatives .creatives-right {
-  flex: 50%;
-}
-
-@media screen and (max-width: 1090px) {
-  .creatives .cratives-content {
-    gap: 60px;
-  }
-}
-@media screen and (max-width: 1039px) {
-  .creatives .creatives-left span {
-    font-size: 30px;
-  }
-  .creatives .creatives-left h1 {
-    font-size: 15px;
-  }
-  .creatives .creatives-left p {
-    font-size: 13px;
-    line-height: 24px;
-  }
-}
-@media screen and (max-width: 760px) {
-  .creatives .cratives-content {
-    gap: 20px;
-  }
-}
-.started-blog {
-  margin-top: 128px;
-}
-.started-blog .started-content {
-  display: flex;
-  align-items: center;
-  gap: 70px;
-  justify-content: space-between;
-}
-.started-blog .started-content .started-left,
-.started-blog .started-content .started-right {
-  flex: 50%;
-}
-.started-blog .started-right span,
-.started-blog .started-right h1 {
-  font-family: "Sen";
-  font-style: normal;
-  font-weight: 700;
-}
-.started-blog .started-right span {
-  font-size: 36px;
-  letter-spacing: -2px;
-  color: #232536;
-}
-.started-blog .started-right h1 {
-  margin-top: 16px;
-  font-size: 24px;
-  line-height: 32px;
-  color: #232536;
-}
-.started-blog .started-right p {
-  margin-top: 16px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-  color: #232536;
-}
-
-@media screen and (max-width: 1050px) {
-  .started-blog .started-right span {
-    font-size: 22px;
-  }
-  .started-blog .started-right h1 {
-    margin-top: 8px;
-    font-size: 18px;
-    line-height: 25px;
-  }
-  .started-blog .started-right p {
-    font-size: 13px;
-  }
-  .started-blog .started-right p {
-    line-height: 22px;
-  }
-}
-@media screen and (max-width: 720px) {
-  .started-blog .started-right h1 {
-    margin-top: 16px;
-    font-size: 16px;
-  }
-  .started-blog .started-right p {
-    line-height: 24px;
-  }
-  .started-content {
-    gap: 20px !important;
-    text-align: center;
-    flex-direction: column;
-  }
-}/*# sourceMappingURL=about.css.map */
+.page-item a {
+  cursor: pointer;
+}/*# sourceMappingURL=all-post.css.map */

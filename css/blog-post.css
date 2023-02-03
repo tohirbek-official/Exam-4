@@ -274,41 +274,61 @@ footer .footer-right {
     margin-right: 0px !important;
   }
 }
-.about {
-  padding: 83px 108px 109px 86px;
-  background: #f4f0f8;
-  margin-top: 50px;
+.blog-image {
+  margin-top: 80px;
+}
+.blog-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 582px !important;
 }
 
-.about-mssion {
-  display: flex;
-  gap: 54px;
+.blog-info {
+  padding: 63px 216px 0 216px;
 }
-.about-mssion .mision-left-word span,
-.about-mssion .misson-right span {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #232536;
-}
-.about-mssion .mision-left-word h1,
-.about-mssion .misson-right h1 {
+.blog-info .user-info span {
   font-family: "Sen";
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 40px;
   letter-spacing: -1px;
+  color: #592ea9;
+  opacity: 0.87;
+}
+.blog-info .user-info p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6d6e76;
+}
+.blog-info .blog-title {
   margin-top: 24px;
+}
+.blog-info .blog-title h1 {
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 45px;
+  letter-spacing: -2px;
   color: #232536;
 }
-.about-mssion .mision-left-word p,
-.about-mssion .misson-right p {
-  margin-top: 16px;
+.blog-info .tags {
+  margin-top: 34px;
+}
+.blog-info .tags span {
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #232536;
+}
+.blog-info .post-description {
+  margin-top: 50px;
+}
+.blog-info .post-description p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -317,162 +337,57 @@ footer .footer-right {
   color: #6d6e76;
 }
 
-@media screen and (max-width: 848px) {
-  .about {
-    padding: 100px 37px;
+@media screen and (max-width: 1140px) {
+  .blog-info {
+    padding: 63px 150px 0 150px;
   }
 }
-@media screen and (max-width: 720px) {
-  .about-mssion,
-.cratives-content {
-    flex-direction: column;
+@media screen and (max-width: 1010px) {
+  .blog-info .blog-title h1 {
+    font-size: 29px;
   }
-  .cratives-content {
-    text-align: center;
+  .blog-info .tags span {
+    font-size: 20px;
   }
-}
-@media screen and (max-width: 500px) {
-  .about {
-    padding: 100px 20px;
+  .blog-info .post-description p {
+    font-size: 14px;
   }
 }
-@media screen and (max-width: 430px) {
-  .mision-left-word h1,
-.about-mssion .misson-right h1 {
-    font-size: 23px !important;
+@media screen and (max-width: 775px) {
+  .blog-info {
+    padding: 63px 80px 0 80px;
   }
 }
-.creatives {
-  margin-top: 122px;
-}
-.creatives .cratives-content {
-  display: flex;
-  gap: 137px;
-  justify-content: center;
-  align-items: center;
-}
-.creatives .creatives-left {
-  flex: 40%;
-}
-.creatives .creatives-left span {
-  font-family: "Sen";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  letter-spacing: -2px;
-  color: #232536;
-}
-.creatives .creatives-left h1 {
-  margin-top: 16px;
-  font-family: "Sen";
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  font-size: 20px;
-  color: #232536;
-}
-.creatives .creatives-left p {
-  margin-top: 16px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-  color: #232536;
-}
-.creatives .creatives-right {
-  flex: 50%;
-}
-
-@media screen and (max-width: 1090px) {
-  .creatives .cratives-content {
-    gap: 60px;
+@media screen and (max-width: 640px) {
+  .blog-info {
+    padding: 63px 40px 0 40px;
   }
 }
-@media screen and (max-width: 1039px) {
-  .creatives .creatives-left span {
-    font-size: 30px;
+@media screen and (max-width: 550px) {
+  .blog-info {
+    padding: 63px 0px 0 0px;
   }
-  .creatives .creatives-left h1 {
-    font-size: 15px;
+  .blog-info .user-info span {
+    font-size: 26px;
   }
-  .creatives .creatives-left p {
-    font-size: 13px;
-    line-height: 24px;
+  .blog-info .blog-title h1 {
+    font-size: 25px;
   }
-}
-@media screen and (max-width: 760px) {
-  .creatives .cratives-content {
-    gap: 20px;
+  .blog-info .tags span {
+    font-size: 18px;
   }
 }
-.started-blog {
-  margin-top: 128px;
-}
-.started-blog .started-content {
-  display: flex;
-  align-items: center;
-  gap: 70px;
-  justify-content: space-between;
-}
-.started-blog .started-content .started-left,
-.started-blog .started-content .started-right {
-  flex: 50%;
-}
-.started-blog .started-right span,
-.started-blog .started-right h1 {
-  font-family: "Sen";
-  font-style: normal;
-  font-weight: 700;
-}
-.started-blog .started-right span {
-  font-size: 36px;
-  letter-spacing: -2px;
-  color: #232536;
-}
-.started-blog .started-right h1 {
-  margin-top: 16px;
-  font-size: 24px;
-  line-height: 32px;
-  color: #232536;
-}
-.started-blog .started-right p {
-  margin-top: 16px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-  color: #232536;
-}
-
-@media screen and (max-width: 1050px) {
-  .started-blog .started-right span {
+@media screen and (max-width: 408px) {
+  .blog-info .blog-title h1 {
+    font-size: 20px;
+  }
+  .blog-info .user-info span {
     font-size: 22px;
   }
-  .started-blog .started-right h1 {
-    margin-top: 8px;
-    font-size: 18px;
-    line-height: 25px;
-  }
-  .started-blog .started-right p {
-    font-size: 13px;
-  }
-  .started-blog .started-right p {
-    line-height: 22px;
-  }
-}
-@media screen and (max-width: 720px) {
-  .started-blog .started-right h1 {
-    margin-top: 16px;
+  .blog-info .blog-title h1 {
     font-size: 16px;
   }
-  .started-blog .started-right p {
-    line-height: 24px;
+  .blog-info .post-description p {
+    line-height: 25px;
   }
-  .started-content {
-    gap: 20px !important;
-    text-align: center;
-    flex-direction: column;
-  }
-}/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=blog-post.css.map */

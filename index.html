@@ -27,7 +27,7 @@
                 <li><a href="./index.html"> Home </a></li>
                 <li><a href="./blog.html"> Blog </a></li>
                 <li><a href="./about.html"> About Us </a></li>
-                <li><a href="./register.html"> Register </a></li>
+                <li><a href="./register.html" id="register"> Register </a></li>
               </ul>
               <div class="login-button-navbar">
                 <a href="./Login.html"><button>Login</button></a>
@@ -52,14 +52,10 @@
     </section>
     <section>
       <div class="container-slider container">
-        <div class="glider-contain">
-          <div class="blogs-title">
-            <h1>Popular blogs</h1>
-          </div>
-          <div class="popular-blogs">
-            <div class="glider"></div>
-          </div>
+        <div class="blogs-title">
+          <h1>Popular blogs</h1>
         </div>
+        <div class="popular-blogs"></div>
       </div>
     </section>
     <section>
@@ -78,12 +74,12 @@
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
-            <div class="category-box">
+            <div class="category-box" onclick="startup()">
               <div class="category-image">
                 <img src="./Image/category-1.png" />
               </div>
               <div class="category-info">
-                <span>Business</span>
+                <span>Startup</span>
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
@@ -92,7 +88,7 @@
                 <img src="./Image/category-1.png" />
               </div>
               <div class="category-info">
-                <span>Business</span>
+                <span>Economy</span>
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
@@ -101,7 +97,7 @@
                 <img src="./Image/category-1.png" />
               </div>
               <div class="category-info">
-                <span>Business</span>
+                <span>Technology</span>
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </div>
@@ -144,13 +140,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="./Js/layout/api.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.8/glider.min.js"
-      integrity="sha512-AZURF+lGBgrV0WM7dsCFwaQEltUV5964wxMv+TSzbb6G1/Poa9sFxaCed8l8CcFRTiP7FsCgCyOm/kf1LARyxA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
     <script src="./Js/layout/navbar.js"></script>
     <script src="/Js/pages/main.js"></script>
   </body>

@@ -62,6 +62,7 @@ nav {
 .nav {
   display: flex;
   align-items: center;
+  --bs-nav-link-padding-x: none;
   justify-content: space-between;
 }
 
@@ -143,6 +144,12 @@ nav {
 
 .responsive {
   display: none;
+}
+
+.nav-logo a {
+  font-family: "Sen";
+  color: var(--button);
+  font-size: 25px;
 }
 
 @media screen and (max-width: 958px) {
@@ -296,4 +303,87 @@ footer .footer-right {
   width: 100%;
   outline-color: #ffd050;
   padding: 20px 0px 20px 20px;
+}
+
+.my-post-all {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 57px;
+  gap: 40px;
+}
+
+.user-post-box {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+.user-post-box .post-left {
+  flex: 45%;
+}
+.user-post-box .post-right {
+  flex: 55%;
+}
+
+.post-info span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #592ea9;
+}
+.post-info h1 {
+  margin-top: 20px;
+  font-family: "Sen";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  color: #232536;
+}
+.post-info p {
+  margin-top: 35px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #6d6e76;
+}
+
+@media screen and (max-width: 939px) {
+  .post-info h1 {
+    font-size: 29px;
+    line-height: 39px;
+  }
+  .post-info p {
+    margin-top: 26px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .post-info p {
+    margin-top: 12px;
+  }
+  .post-info h1 {
+    font-size: 26px;
+    line-height: 33px;
+  }
+  .post-info p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .user-post-box {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
+  .my-post-title span {
+    font-size: 33px;
+  }
+  .my-post-title button {
+    padding: 10px 24px;
+    background-color: #ffd050;
+  }
 }/*# sourceMappingURL=my-blog.css.map */

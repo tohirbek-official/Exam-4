@@ -62,6 +62,7 @@ nav {
 .nav {
   display: flex;
   align-items: center;
+  --bs-nav-link-padding-x: none;
   justify-content: space-between;
 }
 
@@ -143,6 +144,12 @@ nav {
 
 .responsive {
   display: none;
+}
+
+.nav-logo a {
+  font-family: "Sen";
+  color: var(--button);
+  font-size: 25px;
 }
 
 @media screen and (max-width: 958px) {

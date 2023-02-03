@@ -1,0 +1,123 @@
+@import "../main.scss";
+@import "../layout/nav";
+@import "../layout/footer";
+
+.blog-image {
+  margin-top: 80px;
+  img {
+    object-fit: cover;
+    height: 582px !important;
+  }
+}
+.blog-info {
+  padding: 63px 216px 0 216px;
+  .user-info {
+    span {
+      font-family: "Sen";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 40px;
+      letter-spacing: -1px;
+      color: #592ea9;
+      opacity: 0.87;
+    }
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      color: #6d6e76;
+    }
+  }
+  .blog-title {
+    margin-top: 24px;
+    h1 {
+      font-family: "Sen";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 35px;
+      line-height: 45px;
+      letter-spacing: -2px;
+      color: #232536;
+    }
+  }
+  .tags {
+    margin-top: 34px;
+    span {
+      font-family: "Sen";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      color: #232536;
+    }
+  }
+  .post-description {
+    margin-top: 50px;
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: #6d6e76;
+    }
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .blog-info {
+    padding: 63px 150px 0 150px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .blog-info .blog-title h1 {
+    font-size: 29px;
+  }
+  .blog-info .tags span {
+    font-size: 20px;
+  }
+  .blog-info .post-description p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 775px) {
+  .blog-info {
+    padding: 63px 80px 0 80px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .blog-info {
+    padding: 63px 40px 0 40px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .blog-info {
+    padding: 63px 0px 0 0px;
+  }
+  .blog-info .user-info span {
+    font-size: 26px;
+  }
+  .blog-info .blog-title h1 {
+    font-size: 25px;
+  }
+  .blog-info .tags span {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 408px) {
+  .blog-info .blog-title h1 {
+    font-size: 20px;
+  }
+  .blog-info .user-info span {
+    font-size: 22px;
+  }
+  .blog-info .blog-title h1 {
+    font-size: 16px;
+  }
+  .blog-info .post-description p {
+    line-height: 25px;
+  }
+}
+

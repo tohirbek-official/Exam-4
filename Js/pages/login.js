@@ -21,7 +21,7 @@ form.addEventListener("submit", (e) => {
     })
     .then((res) => {
       localStorage.setItem(TOKEN, res.data.token);
-      window.location.href = "./my-blog.html";
+      window.location.href = "./blog.html";
     })
     .catch((err) => {
       if (err.response.status == 401) {

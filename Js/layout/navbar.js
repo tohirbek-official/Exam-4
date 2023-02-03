@@ -1,8 +1,9 @@
 const hamburger = document.querySelector("#id"),
   navlink = document.querySelector(".link-nav"),
   closeBtn = document.querySelector(".close-responsive"),
-  loginButton = document.querySelector(".login-button-navbar button");
-
+  loginButton = document.querySelector(".login-button-navbar button"),
+  navLogo = document.querySelector(".nav-logo a"),
+  register = document.getElementById("register");
 hamburger.addEventListener("click", () => {
   navlink.style.right = "0";
   setTimeout(() => {
@@ -23,9 +24,17 @@ document.addEventListener("scroll", () => {
 
 let token = localStorage.getItem("PORTFOLIO_TOKEN");
 if (token) {
+  navLogo.innerHTML = "My blog";
+  navLogo.href = "./blog.html";
+  register.href = "./all-post.html";
+  register.textContent = "All category";
   loginButton.textContent = "Logout";
 } else {
-  loginButton.textContent = "Sign up";
+  register.href;
+  register.textContent;
+  navLogo.innerHTML;
+  loginButton.textContent;
+  navLogo.href = "./Login.html";
 }
 loginButton.addEventListener("click", () => {
   localStorage.removeItem("PORTFOLIO_TOKEN");

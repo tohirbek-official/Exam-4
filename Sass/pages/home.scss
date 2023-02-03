@@ -1,13 +1,13 @@
 @import "../layout/nav";
 @import "../layout/footer";
-@import '../main.scss';
+@import "../main.scss";
 $color-white: #ffffff;
 $color-light: #f4f4f4;
 $color-darks: #454545;
 $box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-body{
-  color : $color-white
+body {
+  color: $color-white;
 }
 .main-section {
   margin: auto;
@@ -98,7 +98,7 @@ body{
 }
 
 .user-name {
-  color: blue;
+  color: var(--button);
 }
 @media screen and (max-width: 880px) {
   .main-word {
@@ -171,7 +171,12 @@ body{
 }
 
 .popular-blogs {
+  display: flex;
+  gap: 20px;
   margin-top: 94px;
+}
+.box {
+  padding: 0 25px;
 }
 .blogs-title {
   margin-top: 64px;
@@ -187,7 +192,7 @@ body{
   }
 }
 .user-blogs-info {
-  margin-top: 32px;
+  margin-top: 22px;
   margin-bottom: 16px;
   span {
     font-family: "Inter";
@@ -210,7 +215,7 @@ body{
   }
 }
 .blogs-discription {
-  margin: 16px 0;
+  margin-top: 7px;
   p {
     font-family: "Inter";
     font-style: normal;
@@ -404,4 +409,32 @@ body{
 
 .span {
   color: red;
+}
+@media screen and (max-width: 925px) {
+  .popular-blogs {
+    gap: 14px;
+  }
+  .user-blogs-info span {
+    font-size: 13px;
+  }
+  .blogs-info span {
+    font-size: 17px;
+  }
+  .blogs-discription p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 790px) {
+  .popular-blogs {
+    flex-direction: column;
+  }
+  .user-blogs-info span {
+    font-size: 15px;
+  }
+  .blogs-info span {
+    font-size: 20px;
+  }
+  .blogs-discription p {
+    font-size: 14px;
+  }
 }
