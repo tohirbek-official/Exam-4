@@ -2,7 +2,7 @@ const homeBtn = document.querySelector(".home-button"),
   mainWord = document.querySelector(".main-section"),
   popular = document.querySelector(".popular-blogs");
 
-function main(userName, photo, title, date, description, id) {
+function main(userName, photo, title, date, description) {
   return `
   <div class="main-image">
   <img src="https://blog-backend.up.railway.app/upload/${photo} "/></div>
@@ -13,7 +13,7 @@ function main(userName, photo, title, date, description, id) {
       <span>&nbsp;|&nbsp; ${date}</span></div>
    <div class="main-discription"><p>
     ${description}</p></div><div class="main-button">
-    <button ><a style="color:rgba(35, 37, 54, 1);" onclick="${id}">Read More</a> ></button>
+    <a style="color:rgba(35, 37, 54, 1);" href="./blog-post.html" ><button >Read More</button></a> 
   </div> </div></div>`;
 }
 
