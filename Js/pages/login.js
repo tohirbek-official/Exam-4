@@ -3,6 +3,7 @@ const form = document.querySelector("form"),
   userPassword = document.querySelector("#password"),
   loginStatus = document.querySelector(".login-input"),
   TOKEN = "PORTFOLIO_TOKEN";
+
 function login() {
   return `
   <span>You have not registered yet or you have entered incorrect information</span>`;
@@ -21,7 +22,7 @@ form.addEventListener("submit", (e) => {
     })
     .then((res) => {
       localStorage.setItem(TOKEN, res.data.token);
-      window.location.href = "./blog.html";
+      window.location.href = "./my-post.html";
     })
     .catch((err) => {
       if (err.response.status == 401) {

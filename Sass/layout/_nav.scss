@@ -88,15 +88,8 @@ nav {
   color: var(--button);
   font-size: 25px;
 }
-@media screen and (max-width: 958px) {
-  .container {
-    padding: 0 50px !important;
-  }
-}
+
 @media screen and (max-width: 850px) {
-  .container {
-    padding: 0 15px !important;
-  }
   .login-button-navbar {
     margin-left: 0;
   }

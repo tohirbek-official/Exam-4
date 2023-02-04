@@ -1,6 +1,11 @@
 const filterBtn = document.querySelector(".setting-filter"),
   closeFilterBtn = document.querySelector(".close-filter-btn"),
-  filterCategory = document.querySelector(".category-filter");
+  filterCategory = document.querySelector(".category-filter"),
+  allButton = document.querySelectorAll(".filter-button button"),
+  categoryTitle = document.querySelector(".startup-title h1"),
+  startupBottom = document.querySelector(".startup-bottom span"),
+  catgoryPost = document.querySelector(".user-category-left"),
+  filterCategoryBtn = document.querySelectorAll(".filter-button");
 
 filterBtn.addEventListener("click", () => {
   filterCategory.style.display = "block";
@@ -8,13 +13,41 @@ filterBtn.addEventListener("click", () => {
 closeFilterBtn.addEventListener("click", (e) => {
   filterCategory.style.display = "";
 });
-// const userCategory = document.querySelector("."),
-const userCategory = document.querySelector(".user-category-left"),
-  pagination = document.querySelector(".pagination"),
-  postSearch = document.getElementById("search");
 
-let limit = 8,
-  page = 1;
+allButton.forEach((el) => {
+  el.addEventListener("click", function (e) {
+    e.target.classList.add("active");
+    allButton.forEach((el) => {
+      el.classList !== e.target.classList && el.classList.remove("active");
+    });
+  });
+});
+
+let categoryName = localStorage.getItem("categoryName");
+function titleCategory(name) {
+  if (categoryName == name) {
+    categoryTitle.textContent = name;
+    startupBottom.textContent = `${name} > Category`;
+  }
+  switch (name) {
+    case "Business":
+      document.getElementById("business").classList = "active";
+      break;
+    case "Startup":
+      document.getElementById("startup").classList = "active";
+      break;
+    case "Economy":
+      document.getElementById("economy").classList = "active";
+      break;
+    case "Technology":
+      document.getElementById("technology").classList = "active";
+      break;
+    case "All Categories":
+      document.getElementById("all").classList = "active";
+      break;
+  }
+}
+titleCategory(categoryName);
 
 function getPost(photo, title, discription) {
   return ` <div class="user-category-box">
@@ -30,63 +63,88 @@ function getPost(photo, title, discription) {
     </div>`;
 }
 
-function getExprience() {
-  request.get(`post?page=${page}&limit=${limit}`).then((res) => {
-    pagination.innerHTML = "";
-    userCategory.innerHTML = "";
-    res.data.data.map((el) => {
-      let photoId = el.photo._id,
-        photoName = el.photo.name.split(".").at(-1),
-        photo = photoId + "." + photoName;
-      const post = getPost(photo, el.title, el.description);
-      userCategory.innerHTML += post;
-    });
-    let pagesNum = Math.ceil(
-      res.data.pagination.total / res.data.pagination.limit
-    );
-    let pages = "";
-    for (var i = 1; i <= pagesNum; i++) {
-      pages += `<li class="page-item"><a class="page-link ${
-        page == i ? "active" : ""
-      }"  onclick=changePage(${i})>${i}</a></li>`;
+let dataName = localStorage.getItem("categoryName");
+const Business = [],
+  Startup = [],
+  Economy = [],
+  Technology = [],
+  All = [];
+request.get("category").then((res) => {
+  res.data.data.forEach((e) => {
+    let business = e.name.includes("Business"),
+      startup = e.name.includes("Startup"),
+      economy = e.name.includes("Economy"),
+      technology = e.name.includes("Technology");
+    All.push(e);
+    if (business) {
+      Business.push(e);
+    } else if (startup) {
+      Startup.push(e);
+    } else if (economy) {
+      Economy.push(e);
+    } else if (technology) {
+      Technology.push(e);
+    } else {
+      alert("Malumot topilmadi!");
     }
-    pagination.innerHTML = `
-    <li class="page-item"><a class="page-link ${
-      page === 1 ? "disabled" : ""
-    }"  onclick="changePage('prev')"  >Previous</a></li>
-   ${pages}
-    <li class="page-item"><a class="page-link ${
-      pagesNum == page ? "disabled" : ""
-    }"  onclick="changePage('next')">Next</a></li>`;
+  });
+  filterPost(dataName);
+});
+function filterPost(name) {
+  if (name == "Business") {
+    renderPost(Business);
+  } else if (name == "Startup") {
+    renderPost(Startup);
+  } else if (name == "Economy") {
+    renderPost(Economy);
+  } else if (name == "Technology") {
+    renderPost(Technology);
+  }else if (name == "All Categories") {
+    renderPost(All);
+  }
+}
+
+function renderPost(obj) {
+  obj.forEach((e) => {
+    let photoId = e.photo._id,
+      photoName = e.photo.name.split(".").at(-1),
+      photo = photoId + "." + photoName;
+    const post = getPost(photo, e.name, e.description);
+    catgoryPost.innerHTML += post;
   });
 }
-getExprience();
-
-// postSearch.addEventListener("keyup", (e) => {
-//   pagination.innerHTML = "";
-//   userCategory.innerHTML = "";
-//   let key = e.target.value;
-//   request(`post?search=${key}`).then((res) => {
-//     res.data.data.map((el) => {
-//       let photoId = el.photo._id,
-//         photoName = el.photo.name.split(".").at(-1),
-//         photo = photoId + "." + photoName;
-//       const post = getPost(photo, el.title, el.description);
-//       userCategory.innerHTML += post;
-//     });
-//     if (!key) {
-//       getExprience();
-//     }
-//   });
-// });
-
-function changePage(value) {
-  if (value === "next") {
-    page++;
-  } else if (value == "prev") {
-    page--;
-  } else {
-    page = value;
-  }
-  getExprience();
+function filterButton() {
+  filterCategoryBtn.forEach((e) => {
+    e.addEventListener("click", (event) => {
+      let data = event.target.name;
+      localStorage.setItem("categoryName", data);
+      if (data == "All Categories") {
+        catgoryPost.innerHTML = "";
+        categoryTitle.textContent = "All Categories";
+        startupBottom.textContent = "All > Category";
+        renderPost(All);
+      } else if (data == "Startup") {
+        catgoryPost.innerHTML = "";
+        categoryTitle.textContent = "Startup";
+        startupBottom.textContent = "Startup > Category";
+        renderPost(Startup);
+      } else if (data == "Economy") {
+        catgoryPost.innerHTML = "";
+        categoryTitle.textContent = "Economy";
+        startupBottom.textContent = "Economy > Category";
+        renderPost(Economy);
+      } else if (data == "Technology") {
+        catgoryPost.innerHTML = "";
+        categoryTitle.textContent = "Technology";
+        startupBottom.textContent = "Technology > Category";
+        renderPost(Technology);
+      } else if (data == "Business") {
+        catgoryPost.innerHTML = "";
+        categoryTitle.textContent = "Business";
+        startupBottom.textContent = "Business >Category";
+        renderPost(Business);
+      }
+    });
+  });
 }
+filterButton();

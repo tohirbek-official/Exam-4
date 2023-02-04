@@ -1,7 +1,6 @@
 let myPost = document.querySelector(".my-post-title"),
   add = document.getElementById("add"),
   TOKEN = localStorage.getItem("PORTFOLIO_TOKEN");
-
 function addPost() {
   return `
     <div class="add-posts">
@@ -10,7 +9,11 @@ function addPost() {
     data-bs-toggle="modal"
     data-bs-target="#staticBackdrop">Add posts</button></div>`;
 }
-if (TOKEN) {
+if (!TOKEN) {
+  document.body.innerHTML = "";
+  location.href = "Login.html";
+} else {
+  document.body.innerHTML;
   myPost.innerHTML += addPost();
 }
 

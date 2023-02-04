@@ -27,7 +27,7 @@ function post(photo, userName, date, title, description, tags) {
   </div>`;
 }
 
-let local = localStorage.getItem("BLOG_POST"),
+let local = localStorage.getItem("Main-top-Post"),
   blog = JSON.parse(local),
   photoId = blog.photo._id;
 let photoName = blog.photo.name.split(".").at(-1);

@@ -1,8 +1,9 @@
 const homeBtn = document.querySelector(".home-button"),
   mainWord = document.querySelector(".main-section"),
-  popular = document.querySelector(".popular-blogs");
+  popular = document.querySelector(".popular-blogs"),
+  categoryBtn = document.querySelectorAll(".category-box-hover button");
 
-function main(userName, photo, title, date, description) {
+function main(userName, photo, title, date, description, obj) {
   return `
   <div class="main-image">
   <img src="https://blog-backend.up.railway.app/upload/${photo} "/></div>
@@ -13,38 +14,40 @@ function main(userName, photo, title, date, description) {
       <span>&nbsp;|&nbsp; ${date}</span></div>
    <div class="main-discription"><p>
     ${description}</p></div><div class="main-button">
-    <a style="color:rgba(35, 37, 54, 1);" href="./blog-post.html" ><button >Read More</button></a> 
+    <a style="color:rgba(35, 37, 54, 1);" ><button >Read More</button></a> 
   </div> </div></div>`;
 }
 
-request.get("post/lastone").then((res) => {
-  let photoId = res.data.photo._id,
-    photoName = res.data.photo.name.split(".").at(-1),
-    photo = photoId + "." + photoName;
-  let userCreateDate = res.data.updatedAt;
-  let resdate = userCreateDate.split("T")[0];
-  let date = resdate.replaceAll("-", ", ");
-  let result = main(
-    res.data.user.first_name,
-    photo,
-    res.data.title,
-    date,
-    res.data.description
-  );
-  mainWord.innerHTML = result;
-});
+request.get("post/lastone").then((res) => {});
 
 function category() {
   request.get("post/lastone").then((res) => {
     let blogPost = JSON.stringify(res.data);
-    localStorage.setItem("BLOG_POST", blogPost);
+    localStorage.setItem("Main-top-Post", blogPost);
   });
 }
 category();
 
-{
-  /* <img src="https://blog-backend.up.railway.app/upload/${photo} "/> */
+function homePost() {
+  let local = localStorage.getItem("Main-top-Post"),
+    res = JSON.parse(local);
+  let photoId = res.photo._id,
+    photoName = res.photo.name.split(".").at(-1),
+    photo = photoId + "." + photoName;
+  let userCreateDate = res.updatedAt;
+  let resdate = userCreateDate.split("T")[0];
+  let date = resdate.replaceAll("-", ", ");
+  let result = main(
+    res.user.first_name,
+    photo,
+    res.title,
+    date,
+    res.description
+  );
+  mainWord.innerHTML = result;
 }
+homePost();
+
 function popularBlogs(photo, name, date, title, discription) {
   return `
   <div class="card"><div class="blogs-box">
@@ -85,8 +88,16 @@ request.get("post/lastones").then((res) => {
   });
 });
 
-// function startup() {
-//   request.get("category").then((res) => {
-//     console.log(res.data);
-//   });
-// }
+
+// getChooseCategory();
+function categoryBox(name) {
+  location.href = "Category.html";
+  localStorage.setItem("categoryName", name);
+}
+
+categoryBtn.forEach((e) => {
+  e.addEventListener("click", (e) => {
+    categoryBox(e.target.name)
+    });
+});
+

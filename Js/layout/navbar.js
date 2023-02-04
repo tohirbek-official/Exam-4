@@ -25,9 +25,9 @@ document.addEventListener("scroll", () => {
 let token = localStorage.getItem("PORTFOLIO_TOKEN");
 if (token) {
   navLogo.innerHTML = "My blog";
-  navLogo.href = "./blog.html";
-  register.href = "./Category.html";
-  register.textContent = "Category";
+  navLogo.href = "./my-post.html";
+  register.href = "./my-post.html";
+  register.textContent = "My posts";
   loginButton.textContent = "Logout";
 } else {
   register.href;
