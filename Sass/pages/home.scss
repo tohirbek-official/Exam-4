@@ -1,3 +1,4 @@
+@import "../layout/loading.scss";
 @import "../layout/nav";
 @import "../layout/footer";
 @import "../main.scss";
@@ -382,7 +383,6 @@ body {
   color: red;
 }
 @media screen and (max-width: 925px) {
- 
   .popular-blogs {
     gap: 45px;
     flex-direction: column;
@@ -410,7 +410,6 @@ body {
     font-size: 14px;
   }
 }
-
 
 @media screen and (max-width: 340px) {
   .user-blogs-info span {
@@ -484,7 +483,7 @@ body {
     transform: translate(-50%, -50%);
     padding: 13px 12px;
   }
-  button:hover{
+  button:hover {
     background: #fff;
     color: #000;
     border: 1px solid #ffbb00 !important;

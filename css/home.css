@@ -1,5 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
+.card {
+  margin: 10px;
+  width: 300px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.card .image img {
+  max-width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.card .content {
+  padding: 20px 30px;
+}
+
+.card.is-loading .image,
+.card.is-loading h2,
+.card.is-loading p {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+.card.is-loading .image {
+  height: 200px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.card.is-loading h2 {
+  width: 119px;
+  height: 10px;
+}
+.card.is-loading p {
+  margin-top: 12px;
+  height: 20px !important;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+.word-content-loading .word-loading div {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+}
+.word-content-loading .word-loading div {
+  display: none;
+  margin-top: 15px;
+  height: 20px;
+}
+
 nav {
   top: 0;
   z-index: 101;
@@ -217,18 +280,6 @@ footer .footer-right {
     margin-right: 0px !important;
   }
 }
-:root {
-  --button: #ffd050;
-  --border: 12px;
-}
-
-button {
-  background: transparent;
-  border: none !important;
-  outline: none;
-  border-radius: var(--border) !important;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -266,6 +317,11 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1260px) {
+  .container {
+    padding: 0 50px;
+  }
+}
 @media screen and (max-width: 1032px) {
   .container {
     padding: 0 30px;
@@ -286,6 +342,18 @@ a {
     padding: 0 10px;
   }
 }
+:root {
+  --button: #ffd050;
+  --border: 12px;
+}
+
+button {
+  background: transparent;
+  border: none !important;
+  outline: none;
+  border-radius: var(--border) !important;
+}
+
 body {
   color: #ffffff;
 }

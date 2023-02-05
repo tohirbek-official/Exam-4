@@ -31,6 +31,11 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1260px) {
+  .container {
+    padding: 0 50px ;
+  }
+}
 @media screen and (max-width: 1032px) {
   .container {
     padding: 0 30px;

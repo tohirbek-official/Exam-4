@@ -70,6 +70,7 @@ const Business = [],
   Technology = [],
   All = [];
 request.get("category").then((res) => {
+  console.log(res.data.data);
   res.data.data.forEach((e) => {
     let business = e.name.includes("Business"),
       startup = e.name.includes("Startup"),
@@ -99,7 +100,7 @@ function filterPost(name) {
     renderPost(Economy);
   } else if (name == "Technology") {
     renderPost(Technology);
-  }else if (name == "All Categories") {
+  } else if (name == "All Categories") {
     renderPost(All);
   }
 }

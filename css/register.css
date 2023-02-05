@@ -217,18 +217,6 @@ footer .footer-right {
     margin-right: 0px !important;
   }
 }
-:root {
-  --button: #ffd050;
-  --border: 12px;
-}
-
-button {
-  background: transparent;
-  border: none !important;
-  outline: none;
-  border-radius: var(--border) !important;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -266,6 +254,11 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1260px) {
+  .container {
+    padding: 0 50px;
+  }
+}
 @media screen and (max-width: 1032px) {
   .container {
     padding: 0 30px;
@@ -286,6 +279,18 @@ a {
     padding: 0 10px;
   }
 }
+:root {
+  --button: #ffd050;
+  --border: 12px;
+}
+
+button {
+  background: transparent;
+  border: none !important;
+  outline: none;
+  border-radius: var(--border) !important;
+}
+
 .register-title {
   text-align: center;
   margin-top: 68px;

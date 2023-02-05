@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sen&display=swap");
-:root {
-  --button: #ffd050;
-  --border: 12px;
-}
-
-button {
-  background: transparent;
-  border: none !important;
-  outline: none;
-  border-radius: var(--border) !important;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -49,6 +37,11 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1260px) {
+  .container {
+    padding: 0 50px;
+  }
+}
 @media screen and (max-width: 1032px) {
   .container {
     padding: 0 30px;
@@ -68,4 +61,15 @@ a {
   .container {
     padding: 0 10px;
   }
+}
+:root {
+  --button: #ffd050;
+  --border: 12px;
+}
+
+button {
+  background: transparent;
+  border: none !important;
+  outline: none;
+  border-radius: var(--border) !important;
 }/*# sourceMappingURL=main.css.map */

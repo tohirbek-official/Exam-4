@@ -29,22 +29,22 @@ function category() {
 category();
 
 function homePost() {
-  let local = localStorage.getItem("Main-top-Post"),
-    res = JSON.parse(local);
-  let photoId = res.photo._id,
-    photoName = res.photo.name.split(".").at(-1),
-    photo = photoId + "." + photoName;
-  let userCreateDate = res.updatedAt;
-  let resdate = userCreateDate.split("T")[0];
-  let date = resdate.replaceAll("-", ", ");
-  let result = main(
-    res.user.first_name,
-    photo,
-    res.title,
-    date,
-    res.description
-  );
-  mainWord.innerHTML = result;
+  request.get("post/lastone").then((res) => {
+    let photoId = res.data.photo._id,
+      photoName = res.data.photo.name.split(".").at(-1),
+      photo = photoId + "." + photoName;
+    let userCreateDate = res.data.updatedAt;
+    let resdate = userCreateDate.split("T")[0];
+    let date = resdate.replaceAll("-", ", ");
+    let result = main(
+      res.data.user.first_name,
+      photo,
+      res.data.title,
+      date,
+      res.data.description
+    );
+    mainWord.innerHTML = result;
+  });
 }
 homePost();
 
@@ -65,29 +65,33 @@ function popularBlogs(photo, name, date, title, discription) {
 </div>
   `;
 }
-request.get("post/lastones").then((res) => {
-  let arr = Object.entries(res.data);
-  let resSlice = arr.slice(-3);
-  resSlice.map((e) => {
-    let data = e[1],
-      fullName = data.user.first_name + " " + data.user.last_name;
-    (photoId = data.photo._id),
-      (photoName = data.photo.name.split(".").at(-1)),
-      (photo = photoId + "." + photoName),
-      (userCreateDate = data.updatedAt),
-      (resdate = userCreateDate.split("T")[0]),
-      (date = resdate.replaceAll("-", ", ")),
-      (result = popularBlogs(
-        photo,
-        fullName,
-        date,
-        data.title,
-        data.description
-      ));
-    popular.innerHTML += result;
-  });
-});
 
+function PopularPost() {
+  request.get("post/lastones").then((res) => {
+    let arr = Object.entries(res.data);
+    let resSlice = arr.slice(-3);
+    resSlice.map((e) => {
+      let data = e[1],
+        fullName = data.user.first_name + " " + data.user.last_name;
+      (photoId = data.photo._id),
+        (photoName = data.photo.name.split(".").at(-1)),
+        (photo = photoId + "." + photoName),
+        (userCreateDate = data.updatedAt),
+        (resdate = userCreateDate.split("T")[0]),
+        (date = resdate.replaceAll("-", ", ")),
+        (result = popularBlogs(
+          photo,
+          fullName,
+          date,
+          data.title,
+          data.description
+        ));
+      popular.innerHTML += result;
+      popular.removeChild(document.querySelector(".card"));
+    });
+  });
+}
+PopularPost();
 
 // getChooseCategory();
 function categoryBox(name) {
@@ -97,7 +101,6 @@ function categoryBox(name) {
 
 categoryBtn.forEach((e) => {
   e.addEventListener("click", (e) => {
-    categoryBox(e.target.name)
-    });
+    categoryBox(e.target.name);
+  });
 });
-
