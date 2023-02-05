@@ -29,22 +29,40 @@ function category() {
 category();
 
 function homePost() {
-  request.get("post/lastone").then((res) => {
-    let photoId = res.data.photo._id,
-      photoName = res.data.photo.name.split(".").at(-1),
+  if (localStorage.getItem("Main-top-Post")) {
+    let res = JSON.parse(localStorage.getItem("Main-top-Post"));
+    let photoId = res.photo._id,
+      photoName = res.photo.name.split(".").at(-1),
       photo = photoId + "." + photoName;
-    let userCreateDate = res.data.updatedAt;
+    let userCreateDate = res.updatedAt;
     let resdate = userCreateDate.split("T")[0];
     let date = resdate.replaceAll("-", ", ");
     let result = main(
-      res.data.user.first_name,
+      res.user.first_name,
       photo,
-      res.data.title,
+      res.title,
       date,
-      res.data.description
+      res.description
     );
     mainWord.innerHTML = result;
-  });
+  } else {
+    request.get("post/lastone").then((res) => {
+      let photoId = res.data.photo._id,
+        photoName = res.data.photo.name.split(".").at(-1),
+        photo = photoId + "." + photoName;
+      let userCreateDate = res.data.updatedAt;
+      let resdate = userCreateDate.split("T")[0];
+      let date = resdate.replaceAll("-", ", ");
+      let result = main(
+        res.data.user.first_name,
+        photo,
+        res.data.title,
+        date,
+        res.data.description
+      );
+      mainWord.innerHTML = result;
+    });
+  }
 }
 homePost();
 
