@@ -13,11 +13,53 @@ body {
 .main-section {
   margin: auto;
   height: 100%;
-  background: radial-gradient(
-    30.56% 76.04% at 74.58% 0%,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+  // background: radial-gradient(
+  //   30.56% 76.04% at 74.58% 0%,
+  //   rgba(0, 0, 0, 0) 0%,
+  //   rgba(0, 0, 0, 0.6) 100%
+  // );
+}
+
+.home-loading {
+  margin-top: 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  span {
+    display: block;
+    padding-top: 24px;
+    width: 500px;
+    background: #eee;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+    animation: 1.5s shine linear infinite;
+  }
+  span:first-child {
+    width: 220px;
+  }
+  span:nth-child(2) {
+    width: 803px;
+    height: 128px;
+  }
+  span:nth-child(3) {
+    width: 243px;
+  }
+  span:nth-child(4) {
+    height: 35px;
+    width: 550px;
+  }
+  span:nth-child(5) {
+    margin-top: 32px;
+    height: 56px;
+    width: 204px;
+  }
+}
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
 }
 .main {
   position: relative;
@@ -95,9 +137,6 @@ body {
   position: relative;
 }
 
-.user-name {
-  color: var(--button);
-}
 @media screen and (max-width: 880px) {
   .main-word {
     width: 663px;
@@ -229,6 +268,11 @@ body {
     font-size: 14px;
     line-height: 20px;
     color: #4c4c4c;
+  }
+  span:nth-child(2) {
+    cursor: pointer;
+    font-size: 15px;
+    color: #ffbb00;
   }
 }
 .blogs-info {

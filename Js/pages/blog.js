@@ -4,7 +4,7 @@ function post(photo, userName, date, title, description, tags) {
     <div class="container">
     <div class="blog">
       <div class="blog-image">
-      <img src="https://blog-backend.up.railway.app/upload/${photo}"/></div>
+      <img src="https://blog-backend.up.railway.app/upload/${photo}" alt="Rasm mavjud emas"/></div>
       </div>
       <div class="blog-info">
         <div class="user-info">
@@ -27,7 +27,7 @@ function post(photo, userName, date, title, description, tags) {
   </div>`;
 }
 
-let local = localStorage.getItem("Main-top-Post"),
+let local = localStorage.getItem("CategoryBlog"),
   blog = JSON.parse(local),
   photoId = blog.photo._id;
 let photoName = blog.photo.name.split(".").at(-1);
@@ -40,3 +40,6 @@ let date = resdate.replaceAll("-", " ");
 
 const res = post(photo, fullName, date, blog.title, blog.description, tags);
 main.innerHTML = res;
+
+
+
