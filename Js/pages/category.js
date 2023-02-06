@@ -118,12 +118,14 @@ function renderPost(obj) {
 function filterButton() {
   filterCategoryBtn.forEach((e) => {
     e.addEventListener("click", (event) => {
+      filterCategory.style.display = "none";
       let data = event.target.name;
       localStorage.setItem("categoryName", data);
       if (data == "All Categories") {
         catgoryPost.innerHTML = "";
         categoryTitle.textContent = "All Categories";
         startupBottom.textContent = "All > Category";
+
         renderPost(All);
       } else if (data == "Startup") {
         catgoryPost.innerHTML = "";
@@ -150,5 +152,3 @@ function filterButton() {
   });
 }
 filterButton();
-
-

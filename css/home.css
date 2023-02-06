@@ -448,6 +448,9 @@ body {
 
 .main-discription {
   width: 599px;
+}
+.main-discription p {
+  word-break: break-all;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -525,6 +528,12 @@ body {
   }
   .main-word .main-title h1 {
     font-size: 36px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .main-word,
+.home-page-loading {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 420px) {

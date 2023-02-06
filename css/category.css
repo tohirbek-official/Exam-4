@@ -556,6 +556,13 @@ footer .footer-right {
   .user-category-box img {
     height: inherit;
   }
+  .loading-category {
+    flex-direction: column;
+  }
+  .loading-left,
+.loading-right {
+    width: 100% !important;
+  }
   .category-info {
     padding-left: 10px;
     width: 80%;
@@ -606,5 +613,10 @@ footer .footer-right {
 @media screen and (max-width: 460px) {
   .user-category-box {
     width: 100%;
+  }
+}
+@media screen and (max-width: 370px) {
+  .link-nav {
+    width: 70%;
   }
 }/*# sourceMappingURL=category.css.map */
