@@ -31,7 +31,7 @@ function blog() {
   location.href = "./blog.html";
 }
 
-request.get("post/lastowne").then((res) => {
+request.get("post/lastone").then((res) => {
   let photoId = res.data.photo._id,
     photoName = res.data.photo.name.split(".").at(-1),
     photo = photoId + "." + photoName;
