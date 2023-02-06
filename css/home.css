@@ -360,7 +360,6 @@ body {
 .home-loading span {
   display: block;
   padding-top: 24px;
-  width: 500px;
   background: #eee;
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   border-radius: 5px;
@@ -373,8 +372,8 @@ body {
   width: 220px;
 }
 .home-loading span:nth-child(2) {
-  width: 803px;
-  height: 128px;
+  width: 100%;
+  height: 90px;
 }
 .home-loading span:nth-child(3) {
   width: 243px;
@@ -385,7 +384,7 @@ body {
 }
 .home-loading span:nth-child(5) {
   margin-top: 32px;
-  height: 56px;
+  height: 45px;
   width: 204px;
 }
 
@@ -410,9 +409,13 @@ body {
   z-index: -1;
 }
 
+.home-page-loading,
+.main-word {
+  width: 793px;
+}
+
 .main-word {
   top: 128px;
-  width: 793px;
   position: relative;
 }
 
@@ -473,15 +476,18 @@ body {
 }
 
 @media screen and (max-width: 880px) {
-  .main-word {
+  .main-word,
+.home-page-loading {
     width: 663px;
   }
 }
 @media screen and (max-width: 680px) {
-  .main-word {
+  .main-word,
+.home-page-loading {
     width: 470px;
   }
-  .main-discription {
+  .main-discription,
+.home-loading span:nth-child(4) {
     width: inherit;
   }
 }
@@ -489,14 +495,17 @@ body {
   * {
     letter-spacing: normal !important;
   }
-  .main-word {
+  .main-word,
+.home-page-loading {
     width: 371px;
   }
-  .main-word .main-title h1 {
+  .main-word .main-title h1,
+.home-page-loading .main-title h1 {
     font-size: 45px;
     line-height: 45px;
   }
-  .main-word .main-button button {
+  .main-word .main-button button,
+.home-page-loading .main-button button {
     padding: 11px 32px;
     font-size: 13px;
   }
@@ -519,7 +528,8 @@ body {
   }
 }
 @media screen and (max-width: 420px) {
-  .main-word {
+  .main-word,
+.home-page-loading {
     width: 290px;
   }
   .main-word .main-title h1 {
@@ -543,7 +553,8 @@ body {
   }
 }
 @media screen and (max-width: 320px) {
-  .main-word {
+  .main-word,
+.home-page-loading {
     width: 260px;
   }
   .main-word .main-title h1 {
@@ -796,7 +807,8 @@ body {
   }
 }
 @media screen and (max-width: 422px) {
-  .main-word {
+  .main-word,
+.home-page-loading {
     width: 100%;
   }
   .main-word .main-title h1 {
