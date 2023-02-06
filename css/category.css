@@ -377,7 +377,7 @@ footer .footer-right {
   color: rgb(77, 73, 73);
   font-size: 14px;
   border: 1px solid silver;
-  padding: 20px;
+  padding: 20px !important;
   width: 100%;
   border-radius: 10px;
 }
@@ -389,6 +389,7 @@ footer .footer-right {
 }
 
 .user-category-box {
+  position: relative;
   width: 100%;
   gap: 32px;
   display: flex;
@@ -421,6 +422,49 @@ footer .footer-right {
   font-size: 16px;
   line-height: 28px;
   color: #6d6e76;
+}
+
+.link-category {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+.link-category img {
+  width: 12px;
+  height: inherit;
+}
+
+.search-input {
+  width: 100%;
+}
+.search-input input[type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  border-radius: 50em;
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+.search-input input[type=search]:focus::-webkit-search-cancel-button {
+  opacity: 0.3;
+  pointer-events: all;
+}
+
+.search-submit {
+  display: none;
+  background-color: #592ea9;
+  padding: 16px;
+  border-radius: 15px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
 }
 
 .category-filter {
@@ -505,6 +549,12 @@ footer .footer-right {
   height: 56px;
 }
 
+.category-seaching {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
 @-webkit-keyframes shine {
   to {
     background-position-x: -200%;
@@ -569,11 +619,6 @@ footer .footer-right {
   }
   .user-category-left {
     gap: 60px;
-  }
-  .category-seaching {
-    display: flex;
-    gap: 20px;
-    align-items: center;
   }
   .setting-filter {
     display: block;

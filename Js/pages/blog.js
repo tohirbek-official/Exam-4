@@ -27,19 +27,28 @@ function post(photo, userName, date, title, description, tags) {
   </div>`;
 }
 
-let local = localStorage.getItem("CategoryBlog"),
-  blog = JSON.parse(local),
+let local = localStorage.getItem("CategoryBlog");
+let blog = JSON.parse(local),
   photoId = blog.photo._id;
 let photoName = blog.photo.name.split(".").at(-1);
-let photo = photoId + "." + photoName,
-  tags = blog.tags.join(", "),
+let photo = photoId + "." + photoName;
+if (blog.tags) {
+  tags = blog.tags.join(", ");
+} else {
+  tags = " programming, football ";
+}
+let fullName;
+if (blog.user.first_name) {
   fullName = blog.user.first_name + " " + blog.user.last_name;
+}else{
+  fullName = "John Doe"
+}
+if(!blog.title){
+  blog.title = blog.name
+}
 let userCreateDate = blog.updatedAt;
 let resdate = userCreateDate.split("T")[0];
 let date = resdate.replaceAll("-", " ");
 
 const res = post(photo, fullName, date, blog.title, blog.description, tags);
 main.innerHTML = res;
-
-
-

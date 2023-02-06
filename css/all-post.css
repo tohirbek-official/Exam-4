@@ -565,4 +565,17 @@ footer .footer-right {
   to {
     background-position-x: -200%;
   }
+}
+.user-post-box {
+  position: relative;
+}
+
+.link-category {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+.link-category img {
+  width: 15px;
+  height: inherit;
 }/*# sourceMappingURL=all-post.css.map */

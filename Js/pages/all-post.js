@@ -6,13 +6,15 @@ const myPost = document.querySelector(".my-post-all"),
 let limit = 5,
   page = 1;
 
-function getPost(photo, title, description) {
+function getPost(photo, title, description,id) {
   return `
     <div class="user-post-box">
     <div class="post-left">
     <img src="./Image/main.png" />
     </div>
     <div class="post-right">
+    <div class="link-category">
+    <img src="./Image/link.png" title="Read more" onclick="data('${id}')"></div>
       <div class="post-info">
         <span>BUSINESS</span>
         <h1>${title}</h1>
@@ -25,6 +27,18 @@ function getPost(photo, title, description) {
   </div>`;
 }
 //* <img src="https://blog-backend.up.railway.app/upload/${photo} "/> */
+function data(id) {
+  request.get(`post?page=${page}&limit=${limit}`).then((res) => {
+    res.data.data.forEach((e) => {
+      if (e._id == id) {
+        let obj = JSON.stringify(e);
+        localStorage.setItem("CategoryBlog", obj);
+        location.href = "./blog.html";
+      }
+    });
+  });
+}
+
 function getExprience() {
   request.get(`post?page=${page}&limit=${limit}`).then((res) => {
     pagination.innerHTML = "";
@@ -33,7 +47,7 @@ function getExprience() {
       let photoId = el.photo._id,
         photoName = el.photo.name.split(".").at(-1),
         photo = photoId + "." + photoName;
-      const post = getPost(photo, el.title, el.description);
+      const post = getPost(photo, el.title, el.description, el._id);
       myPost.innerHTML += post;
     });
     let pagesNum = Math.ceil(

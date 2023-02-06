@@ -602,7 +602,6 @@ body {
   margin-top: 64px;
 }
 .blogs-title h1 {
-  color: red;
   font-family: "Sen";
   font-style: normal;
   font-weight: 700;
@@ -702,6 +701,7 @@ body {
 .choose-category .category-content {
   margin-top: 73.8px;
   display: flex;
+  justify-content: center;
   gap: 32px;
 }
 .choose-category .category-box {
@@ -768,6 +768,9 @@ body {
 }
 
 @media screen and (max-width: 925px) {
+  .choose-category .category-content {
+    flex-wrap: wrap;
+  }
   .popular-blogs {
     gap: 45px;
     flex-direction: column;

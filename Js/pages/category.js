@@ -5,8 +5,11 @@ const filterBtn = document.querySelector(".setting-filter"),
   categoryTitle = document.querySelector(".startup-title h1"),
   startupBottom = document.querySelector(".startup-bottom span"),
   catgoryPost = document.querySelector(".user-category-left"),
-  filterCategoryBtn = document.querySelectorAll(".filter-button");
-
+  filterCategoryBtn = document.querySelectorAll(".filter-button"),
+  categoryInput = document.getElementById("categoryInput"),
+  settingImg = document.querySelector(".setting-filter"),
+  categoryAll = document.querySelector(".category-all"),
+  searching = document.querySelector(".search-submit");
 filterBtn.addEventListener("click", () => {
   filterCategory.style.display = "block";
 });
@@ -49,11 +52,13 @@ function titleCategory(name) {
 }
 titleCategory(categoryName);
 
-function getPost(photo, title, discription) {
+function getPost(photo, title, discription, id) {
   return ` <div class="user-category-box">
       <div class="category-left">
       <img src="https://blog-backend.up.railway.app/upload/${photo}"/></div>
       <div class="category-right">
+      <div class="link-category">
+      <img src="./Image/link.png" title="Read more" onclick="data('${id}')"></div>
         <div class="category-info">
           <span>${title}</span>
           <h1>Step-by-step guide to choosing great font pairs</h1><p>${discription}
@@ -70,7 +75,6 @@ const Business = [],
   Technology = [],
   All = [];
 request.get("category").then((res) => {
-  console.log(res.data.data);
   res.data.data.forEach((e) => {
     let business = e.name.includes("Business"),
       startup = e.name.includes("Startup"),
@@ -91,6 +95,18 @@ request.get("category").then((res) => {
   });
   filterPost(dataName);
 });
+
+function data(id) {
+  All.forEach((e) => {
+    console.log(e)
+    if (e._id == id) {
+      let obj = JSON.stringify(e);
+      localStorage.setItem("CategoryBlog", obj);
+      location.href = "./blog.html";
+    }
+  });
+}
+
 function filterPost(name) {
   if (name == "Business") {
     renderPost(Business);
@@ -111,21 +127,19 @@ function renderPost(obj) {
     let photoId = e.photo._id,
       photoName = e.photo.name.split(".").at(-1),
       photo = photoId + "." + photoName;
-    const post = getPost(photo, e.name, e.description);
+    const post = getPost(photo, e.name, e.description, e._id);
     catgoryPost.innerHTML += post;
   });
 }
 function filterButton() {
   filterCategoryBtn.forEach((e) => {
+    localStorage.setItem("categoryName", "All Categories");
     e.addEventListener("click", (event) => {
-      filterCategory.style.display = "none";
       let data = event.target.name;
-      localStorage.setItem("categoryName", data);
       if (data == "All Categories") {
         catgoryPost.innerHTML = "";
         categoryTitle.textContent = "All Categories";
         startupBottom.textContent = "All > Category";
-
         renderPost(All);
       } else if (data == "Startup") {
         catgoryPost.innerHTML = "";
@@ -152,3 +166,43 @@ function filterButton() {
   });
 }
 filterButton();
+
+document.body.addEventListener("click", (e) => {
+  if (e.target.id == "categoryInput" || e.target.id == "submit") {
+    allButton.forEach((e) => {
+      e.classList.remove("active");
+    });
+    categoryTitle.textContent = "All Categories";
+    startupBottom.textContent = "All > Category";
+    document.querySelector("#all").classList = "active";
+    searching.classList.add("show");
+    settingImg.classList.add("hide");
+  } else {
+    searching.classList.remove("show");
+    settingImg.classList.remove("hide");
+  }
+});
+
+document.querySelector("#submit").addEventListener("click", () => {
+  catgoryPost.innerHTML = "";
+  All.map((e) => {
+    if (categoryInput.value.toLowerCase().includes(e.name.toLowerCase())) {
+      let photoId = e.photo._id,
+        photoName = e.photo.name.split(".").at(-1),
+        photo = photoId + "." + photoName;
+      const post = getPost(photo, e.name, e.description);
+      catgoryPost.innerHTML += post;
+    }
+  });
+  if (!catgoryPost.childNodes.length) {
+    catgoryPost.innerHTML = "The search has not given any results";
+  }
+});
+newFunction();
+function newFunction() {
+  categoryInput.addEventListener("keyup", (e) => {
+    if (e.target.value == "") {
+      renderPost(All);
+    }
+  });
+}
