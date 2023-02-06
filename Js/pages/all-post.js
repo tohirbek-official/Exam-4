@@ -1,15 +1,17 @@
 const myPost = document.querySelector(".my-post-all"),
   pagination = document.querySelector(".pagination"),
-  postSearch = document.getElementById("search");
+  postSearch = document.getElementById("search"),
+  search = document.querySelector(".search");
 
-let limit = 8,
+let limit = 5,
   page = 1;
 
 function getPost(photo, title, description) {
   return `
     <div class="user-post-box">
     <div class="post-left">
-    <img src="https://blog-backend.up.railway.app/upload/${photo} "/></div>
+    <img src="./Image/main.png" />
+    </div>
     <div class="post-right">
       <div class="post-info">
         <span>BUSINESS</span>
@@ -22,7 +24,7 @@ function getPost(photo, title, description) {
     </div>
   </div>`;
 }
-
+//* <img src="https://blog-backend.up.railway.app/upload/${photo} "/> */
 function getExprience() {
   request.get(`post?page=${page}&limit=${limit}`).then((res) => {
     pagination.innerHTML = "";
@@ -54,12 +56,30 @@ function getExprience() {
   });
 }
 getExprience();
+function categoryLoading() {
+  return `
+  <div class="loading-category">
+  <div class="loading-left">
+    <span></span>
+  </div>
+  <div class="loading-right">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div></div>`;
+}
 
-postSearch.addEventListener("keyup", (e) => {
+search.addEventListener("click", () => {
   pagination.innerHTML = "";
-  myPost.innerHTML = "";
-  let key = e.target.value;
+  myPost.innerHTML = categoryLoading();
+
+  let key = postSearch.value;
   request(`post?search=${key}`).then((res) => {
+    if (res.data.data == false) {
+      myPost.innerHTML = "The search has not given any results";
+    } else {
+      myPost.innerHTML = "";
+    }
     res.data.data.map((el) => {
       let photoId = el.photo._id,
         photoName = el.photo.name.split(".").at(-1),
@@ -67,10 +87,12 @@ postSearch.addEventListener("keyup", (e) => {
       const post = getPost(photo, el.title, el.description);
       myPost.innerHTML += post;
     });
-    if (!key) {
-      getExprience();
-    }
   });
+});
+postSearch.addEventListener("keyup", (e) => {
+  if (e.target.value == "") {
+    getExprience();
+  }
 });
 
 function changePage(value) {

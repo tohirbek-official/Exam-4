@@ -10,7 +10,7 @@ const filterBtn = document.querySelector(".setting-filter"),
 filterBtn.addEventListener("click", () => {
   filterCategory.style.display = "block";
 });
-closeFilterBtn.addEventListener("click", (e) => {
+closeFilterBtn.addEventListener("click", () => {
   filterCategory.style.display = "";
 });
 
@@ -106,6 +106,7 @@ function filterPost(name) {
 }
 
 function renderPost(obj) {
+  catgoryPost.innerHTML = "";
   obj.forEach((e) => {
     let photoId = e.photo._id,
       photoName = e.photo.name.split(".").at(-1),
@@ -149,3 +150,5 @@ function filterButton() {
   });
 }
 filterButton();
+
+

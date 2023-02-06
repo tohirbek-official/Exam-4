@@ -379,13 +379,27 @@ footer .footer-right {
   }
 }
 .posts-search {
+  display: flex;
+  gap: 20px;
+  align-items: center;
   margin-top: 70px;
 }
+.posts-search .input {
+  width: 100%;
+}
 .posts-search input {
+  border-radius: 15px;
   border: 1px solid silver;
   width: 100%;
   outline-color: #ffd050;
   padding: 20px 0px 20px 20px;
+}
+.posts-search button {
+  background-color: #ffd050;
+  padding: 17px;
+}
+.posts-search button img {
+  width: 25px;
 }
 
 .my-post-all {
@@ -458,8 +472,28 @@ footer .footer-right {
   }
 }
 @media screen and (max-width: 680px) {
-  .user-post-box {
+  .user-post-box,
+.loading-category {
+    align-items: inherit;
     flex-direction: column;
+  }
+  .post-info {
+    padding-left: 10px;
+  }
+  .loading-left,
+.loading-right {
+    margin: auto;
+    width: 100% !important;
+  }
+  .loading-right span:first-child {
+    margin-top: 0 !important;
+  }
+  .loading-right span:nth-child(2) {
+    margin-top: 15px;
+    height: 70px !important;
+  }
+  .loading-right span:nth-child(3) {
+    height: 56px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -473,4 +507,62 @@ footer .footer-right {
 }
 .page-item a {
   cursor: pointer;
+}
+
+.loading-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+.loading-category span {
+  display: block;
+}
+.loading-category .loading-left {
+  width: 50%;
+}
+.loading-category .loading-left span {
+  height: 318px;
+  width: 100%;
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+.loading-category .loading-right {
+  width: 50%;
+}
+.loading-category .loading-right span {
+  height: 20px;
+  width: 100%;
+  margin-top: 20px;
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+.loading-category .loading-right span:first-child {
+  width: 180px;
+}
+.loading-category .loading-right span:nth-child(2) {
+  height: 96px;
+}
+.loading-category .loading-right span:nth-child(3) {
+  height: 56px;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
 }/*# sourceMappingURL=all-post.css.map */
