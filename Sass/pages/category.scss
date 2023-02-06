@@ -282,12 +282,16 @@
   }
   .category-filter {
     width: 280px;
-    padding: 0px 20px 20px 20px;
+    padding: 20px;
     background: #fff;
     position: absolute;
     top: 0px;
     right: 0;
     display: none;
+    border-radius: 0px 0px 0 20px;
+  }
+  .category-content .filter-title span {
+    font-size: 23px;
   }
   .close-filter-btn {
     position: absolute;
