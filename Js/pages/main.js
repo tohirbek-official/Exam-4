@@ -73,7 +73,6 @@ function PopularPost() {
     let arr = Object.entries(res.data);
     let resSlice = arr.slice(-3);
     resSlice.map((e) => {
-      console.log(e)
       let data = e[1],
         fullName = data.user.first_name + " " + data.user.last_name,
         photoId = data.photo._id,
@@ -119,3 +118,4 @@ categoryBtn.forEach((e) => {
     categoryBox(e.target.name);
   });
 });
+

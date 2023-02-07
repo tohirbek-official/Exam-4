@@ -35,13 +35,13 @@ let photo = photoId + "." + photoName;
 if (blog.tags) {
   tags = blog.tags.join(", ");
 } else {
-  tags = " programming, football ";
+  tags = " #programming, #football ";
 }
 let fullName;
 if (blog.user.first_name) {
   fullName = blog.user.first_name + " " + blog.user.last_name;
 }else{
-  fullName = "John Doe"
+  fullName = ""
 }
 if(!blog.title){
   blog.title = blog.name

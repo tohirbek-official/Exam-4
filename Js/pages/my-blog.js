@@ -30,10 +30,7 @@ if (!TOKEN) {
 //     </p></div></div></div>`;
 // }
 
-// request.get("").then((res) => {
-//   console.log(res.data);
-// });
-
-backend.get("/post/login").then((res) => {
-  console.log(res.data.data);
+request.get("/post/login").then((res) => {
+  console.log(res.data);
 });
+
