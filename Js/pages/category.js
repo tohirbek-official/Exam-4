@@ -177,6 +177,7 @@ document.body.addEventListener("click", (e) => {
     document.querySelector("#all").classList = "active";
     searching.classList.add("show");
     settingImg.classList.add("hide");
+    renderPost(All)
   } else {
     searching.classList.remove("show");
     settingImg.classList.remove("hide");

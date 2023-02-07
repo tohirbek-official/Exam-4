@@ -33,3 +33,7 @@ if (!TOKEN) {
 // request.get("").then((res) => {
 //   console.log(res.data);
 // });
+
+backend.get("/post/login").then((res) => {
+  console.log(res.data.data);
+});
